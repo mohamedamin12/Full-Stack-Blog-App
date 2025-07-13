@@ -60,7 +60,7 @@ userSchema.virtual("posts", {
 
 // Generate Auth Token
 userSchema.methods.generateAuthToken = function() {
-  return jwt.sign({id: this._id, isAdmin: this.isAdmin}, process.env.JWT_SECRET_KEY);
+  return jwt.sign({id: this._id, isAdmin: this.isAdmin}, process.env.JWT_SECRET);
 }
 
 const User = mongoose.model("User", userSchema);
